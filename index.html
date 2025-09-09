@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>File Renamer — Dark UI</title>
+</head>
+<body>
+  <h1>Build File Name Changer — Bulk Rename</h1>
+  <p class="subtitle">Upload files and rename them in bulk with custom patterns. Works offline.</p>
+
+  <div class="grid">
+    <!-- Left card -->
+    <div class="card">
+      <div id="dropzone" class="dropzone">
+        Drop files here or click to choose
+      </div>
+      <input id="fileInput" type="file" multiple hidden />
+      <div class="file-list">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Size</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="fileTable">
+            <tr><td colspan="5">No files selected yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right card -->
+    <div class="card">
+      <div class="form-group">
+        <label for="bool">Do you want base name</label>
+        <input type="checkbox" name="bool" id="bool">
+        <label>Base name (e.g. abc)</label>
+        <input id="baseName" type="text" class="input dd disable" placeholder="abc" disabled/>
+      </div>
+      <div class="form-group">
+        <label>Start number</label>
+        <input id="startNum" type="number" class="input dd disable" value="1" disabled />
+      </div>
+      <div class="form-group">
+        <label>Zero-pad (digits)</label>
+        <input id="zeroPad" type="number" class="input dd disable" value="0" disabled/>
+      </div>
+      <div class="form-group">
+        <label>Prefix text (before file name)</label>
+        <input id="prefixText" type="text" class="input" placeholder="Add before name" />
+      </div>
+      <div class="form-group">
+        <label>Suffix text (after file name)</label>
+        <input id="suffixText" type="text" class="input" placeholder="Add after name" />
+      </div>
+      <div class="form-group">
+        <label><input id="keepExt" type="checkbox" checked /> Keep original extension</label>
+      </div>
+      <div class="form-group">
+        <label><input id="sortFiles" type="checkbox" checked /> Sort by file name</label>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary" id="previewBtn">Preview Names</button>
+        <button class="btn btn-success" id="downloadBtn">Rename & Download ZIP</button>
+        <button class="btn btn-danger" id="clearBtn">Clear</button>
+      </div>
+
+      <div id="preview" style="font-size:13px;color:var(--muted)">Ready</div>
+    </div>
+  </div>
+
+  <!-- <footer class="footer">
+    <p>Made for bulk renaming on your device — no server required. © 2025</p>
+    <p><strong>Satyendra Chaudhary</strong></p>
+    <p>📞 8840859444 | 📧 <a href="mailto:satyendrachaudhary38@gmail.com">satyendrachaudhary38@gmail.com</a></p>
+    <p>🌐 <a href="https://satyendra-theta.vercel.app/" target="_blank">My Portfolio</a></p>
+  </footer> -->
+  <div class="footer">
+  <p>Made with ❤️ by <strong>Satyendra Chaudhary</strong></p>
+  <p> <a href="https://github.com/Satyendrachaudhary143">github</a> | 📧 <a href="mailto:satyendrachaudhary38@gmail.com">satyendrachaudhary38@gmail.com</a></p>
+  <p>🌐 <a href="https://satyendra-theta.vercel.app/" target="_blank">My Portfolio</a></p>
+  <p>© 2025 All Rights Reserved</p>
+</div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
